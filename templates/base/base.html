@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <!-- start: Meta -->
+    <meta charset="utf-8">
+    <meta name="description" content="Metro Admin Template.">
+    <meta name="author" content="Łukasz Holeczek">
+    <meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <!-- end: Meta -->
+    <!-- start: Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- end: Mobile Specific -->
+    <!-- start: CSS -->
+
+    <title>{% block title %} {% endblock title %}</title>
+    {% include 'base/header.html' %}
+
+</head>
+<body>
+    <!-- Navbar -->
+    {% include 'base/navbar.html' %}
+
+    <!-- Sidebar -->
+    <div class="container-fluid-full">
+        <div class="row-fluid">
+            <!-- start: Main Menu -->
+            <div id="sidebar-left" class="span2">
+            <div class="nav-collapse sidebar-nav">
+                <ul class="nav nav-tabs nav-stacked main-menu">
+
+                    <li><a href="{% url 'home' %}"><i class="icon-bar-chart"></i><span class="hidden-tablet"> Dashboard</span></a></li>	
+                    <li>
+                        <a class="dropmenu" href="#"><i class="icon-folder-close-alt"></i><span class="hidden-tablet"> Order</span><span class="label label-important"> 2 </span></a>
+                        <ul>
+                            <li><a class="submenu" href="/order/create/"><i class="icon-file-alt"></i><span class="hidden-tablet"> Add Order</span></a></li>
+                            <li><a class="submenu" href="/order/"><i class="icon-file-alt"></i><span class="hidden-tablet"> Order List</span></a></li>
+                        </ul>	
+                    </li>
+                    <li><a href="/category/"><i class="icon-align-justify"></i><span class="hidden-tablet"> Category</span></a></li>
+                    <li><a href="/supplier/"><i class="icon-align-justify"></i><span class="hidden-tablet"> Supplier</span></a></li>
+                    <li><a href="/product/"><i class="icon-align-justify"></i><span class="hidden-tablet"> Product</span></a></li>
+                    <li><a href="login.html"><i class="icon-lock"></i><span class="hidden-tablet"> Login Page</span></a></li>
+
+                </ul>
+            </div>
+            </div>
+
+            <!-- start: Content -->     
+            {% block body %}
+            
+            {% endblock body %}
+
+        </div>
+    </div>
+
+    {% include 'base/footer.html' %}
+    {% include 'base/js.html' %}
+
+</body>
+</html>

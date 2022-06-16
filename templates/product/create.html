@@ -1,0 +1,94 @@
+{% extends 'base/base.html' %}
+{% block title %}Create Product{% endblock title %}
+{% block body %}
+{% load static %}
+
+<div id="content" class="span10">
+	<ul class="breadcrumb">
+		<li>
+			<i class="icon-home"></i>
+			<a href="#">Home</a>
+		</li> 
+	</ul>
+	<div class="row-fluid sortable">
+		<div class="box span12">
+			<div class="box-header" data-original-title>
+				<h2>
+					<i class="halflings-icon edit"></i>
+					<span class="break"></span>Create Product
+
+				</h2>
+				<div class="box-icon">
+			    <a href="{% url 'product_read' %}" class="btn btn-primary teamlist">Product List</a>
+				  <a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
+					<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
+					<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
+				</div>
+			</div>
+			<div class="box-content">
+				<form method="POST" class="form-horizontal">
+				{% csrf_token %}
+
+                <div class="control-group">
+                    <label class="control-label" for="name">{{form.name.label}}</label>
+                    <div class="controls">
+                      {{form.name}}
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="code">{{form.code.label}}</label>
+                    <div class="controls">
+                      {{form.code}}
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="category">{{form.category.label}}</label>
+                    <div class="controls">
+                      {{form.category}}
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="description">{{form.description.label}}</label>
+                    <div class="controls">
+                      {{form.description}}
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="product_quantity">{{form.product_quantity.label}}</label>
+                    <div class="controls">
+                      {{form.product_quantity}}
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="unit_price">{{form.unit_price.label}}</label>
+                    <div class="controls">
+                      {{form.unit_price}}
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label" for="total_price">{{form.total_price.label}}</label>
+                    <div class="controls">
+                      {{form.total_price}}
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">Save changes</button>
+                    <button type="reset" class="btn">Cancel</button>
+                </div>
+                
+					</div>
+				</form>
+			</div>
+		</div>
+		<!--/span-->
+	</div>
+	<!--/row-->
+</div>
+{% endblock body %}
