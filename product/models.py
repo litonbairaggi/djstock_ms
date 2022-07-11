@@ -11,11 +11,15 @@ class Product(models.Model):
     code=models.CharField(max_length=100,blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=False)
     description = models.TextField()
-    product_quantity = models.FloatField(default=0, blank=True)
-    unit_price=models.DecimalField(default=0.00, max_digits=10, decimal_places=2, null=True, blank=True)
-    total_price=models.DecimalField(default=0.00, max_digits=10, decimal_places=2, null=True, blank=True)
+    product_quantity = models.FloatField()
+    unit_price=models.FloatField()
+    total_price=models.FloatField(editable=False, default=0)
     date_created = models.DateTimeField(default=timezone.now)
     date_updated = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return self.name + ' - ' + self.code
+
+    def save(self,*args, **kwargs):
+        self.total_price = self.product_quantity * self.unit_price
+        super(Product, self).save(*args, **kwargs)

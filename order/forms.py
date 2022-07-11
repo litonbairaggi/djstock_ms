@@ -10,7 +10,7 @@ class OrderForm(forms.ModelForm):
 
     class Meta:
         model = Order
-        fields = ['id', 'name', 'mobile', 'product_name', 'category', 'description', 'delivery', 'quantity', 'unit_price', 'total_price']
+        fields = ['id', 'name', 'mobile', 'product_name', 'category', 'description', 'delivery', 'quantity', 'unit_price']
         widgets = {
             'mobile': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':'Phone'}),
             'product_name': forms.Select(attrs={'class': 'form-control'}),
@@ -18,7 +18,6 @@ class OrderForm(forms.ModelForm):
             'delivery': forms.Select(attrs={'class': 'form-control'}),
             'quantity': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':'Quantity'}),
             'unit_price': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':'Unit Price'}),
-            'total_price': forms.NumberInput(attrs={'class': 'form-control', 'placeholder':'Total Price'}),
             
-
+            
         }
