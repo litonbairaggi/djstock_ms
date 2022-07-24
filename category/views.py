@@ -20,7 +20,7 @@ def create(request):
 
 # Read
 def category_read(request):
-    category_data = Category.objects.all()
+    category_data = Category.objects.all().order_by('-id')
     context = {
         'category_data': category_data
     }

@@ -11,7 +11,7 @@ def create(request):
         form = ProductForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, 'Supplier created')
+            messages.success(request, 'Product created')
             return redirect('product_read')
     context = {
         'form':form
@@ -26,7 +26,7 @@ def product_read(request):
     }
     return render(request, 'product/read.html', context)
 
-# Update 
+# Update
 def product_update(request, pk):
     get_user_data = get_object_or_404(Product, pk=pk)
     form = ProductForm(instance=get_user_data)

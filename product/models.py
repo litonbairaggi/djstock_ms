@@ -17,8 +17,11 @@ class Product(models.Model):
     date_created = models.DateTimeField(default=timezone.now)
     date_updated = models.DateTimeField(auto_now=True)
 
+    # def __str__(self):
+    #     return self.name + ' - ' + self.code
+
     def __str__(self):
-        return self.name + ' - ' + self.code
+        return self.name
 
     def save(self,*args, **kwargs):
         self.total_price = self.product_quantity * self.unit_price

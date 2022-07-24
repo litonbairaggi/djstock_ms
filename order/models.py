@@ -29,3 +29,12 @@ class Order(models.Model):
     def save(self,*args, **kwargs):
         self.total_price = self.quantity * self.unit_price
         super(Order, self).save(*args, **kwargs)
+    
+    # @property
+    # def get_total(self):
+    #     total = self.product.price * self.quantity
+    #     return total
+
+    # def save(self, *args, **kwargs):
+    #     self.quantity = self.product_name.product_quantity - self.quantity
+    #     super(Order, self).save(*args, **kwargs)
