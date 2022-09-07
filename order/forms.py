@@ -5,7 +5,7 @@ from .models import Order
 import calculation
 
 class OrderForm(forms.ModelForm):
-    name = forms.CharField(label="Order Name", widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Name Here'}), required=True, error_messages={'required':'Must Enter a Currect Name'})
+    name = forms.CharField(label="Buyer Name", widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'Name Here'}), required=True, error_messages={'required':'Must Enter a Currect Name'})
     description = forms.CharField(label="Description", widget=forms.Textarea({'class': 'form-control', 'placeholder':'Description', 'rows':4, 'cols':50}), required=True, error_messages={'required':'Must Enter Descriptions'})
 
     class Meta:

@@ -8,8 +8,7 @@
 					<span class="icon-bar"></span>
 				</a>
 				<a class="brand" href=""><span>Pinaki Group</span></a>
-				{% comment %} <a class="brand" href="{% url 'dashboard' %}"><span>AB Fitting</span></a> {% endcomment %}
-								
+												
 				<!-- start: Header Menu -->
 				<div class="nav-no-collapse header-nav">
 					<ul class="nav pull-right">		
@@ -25,7 +24,7 @@
 								    <span>Account Settings</span>
 								</li>
 								<li>
-								    <a href="/store/logout/"><i class="halflings-icon off"></i> Logout</a>
+								    <a href="/logout/"><i class="halflings-icon off"></i> Logout</a>
 								</li>
 							{% else %}
 								<li><a href="{% url 'login'%}">Login</a></li>

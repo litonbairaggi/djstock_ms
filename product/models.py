@@ -5,11 +5,13 @@ from django.dispatch import receiver
 from more_itertools import quantify
 from django.db.models import Sum
 from category.models import Category
+from supplier.models import Supplier
 
 class Product(models.Model):
     name=models.CharField(max_length=250,blank=True, null=True)
     code=models.CharField(max_length=100,blank=True, null=True)
     category = models.ForeignKey(Category, on_delete=models.CASCADE, blank=False)
+    supplier = models.ForeignKey(Supplier, on_delete=models.CASCADE, blank=False)
     description = models.TextField()
     product_quantity = models.FloatField()
     unit_price=models.FloatField()
