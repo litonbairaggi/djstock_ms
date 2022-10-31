@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     'category',
+    'subcategory',
     'supplier',
     'store',
     'product',
@@ -85,7 +86,7 @@ WSGI_APPLICATION = 'pinakigroup.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'pinakigroup',
+        'NAME': 'djinvoicems',
         'USER': 'root',
         'PASSWORD': '12345678',
         'HOST': '127.0.0.1',

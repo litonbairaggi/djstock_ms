@@ -11,9 +11,11 @@ urlpatterns = [
     path('login/', views.login_view, name= 'login'),
     path('register/', views.register_view, name='register'),
     path('logout/', views.logout_view, name='logout'),
+    path('password_change/', views.password_change_view, name='password_change'),
 
     path('store/', include('store.urls')),
     path('category/', include('category.urls')),
+    path('subcategory/', include('subcategory.urls')),
     path('supplier/', include('supplier.urls')),
     path('product/', include('product.urls')),
     path('order/', include('order.urls')),

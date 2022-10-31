@@ -4,7 +4,7 @@ from django.utils.timezone import now
 # Create your models here.
 class Category(models.Model):
     category_name = models.CharField(max_length=100, null=True, unique=True, blank=True)
-    created_date = models.DateTimeField(default=now)
+    created_date = models.DateTimeField(null=True, blank=True)
     updated_date = models.DateTimeField(auto_now=True)
 
     def __str__(self):

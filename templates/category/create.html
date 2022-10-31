@@ -20,7 +20,7 @@
 				
 				</h2>
 				<div class="box-icon">
-				    <a href="{% url 'category_read' %}" class="btn btn-primary teamlist">Category List</a>
+				<a href="{% url 'category_read' %}" class="btn btn-primary teamlist">Category List</a>
 					<a href="#" class="btn-setting"><i class="halflings-icon wrench"></i></a>
 					<a href="#" class="btn-minimize"><i class="halflings-icon chevron-up"></i></a>
 					<a href="#" class="btn-close"><i class="halflings-icon remove"></i></a>
@@ -33,7 +33,15 @@
 						<div class="control-group">
 							<label class="control-label" for="category_name">{{form.category_name.label}}</label>
 							<div class="controls">
+								<input type="text" class="span6 category_name" id="category_name" data-provide="category_name" data-items="4">
 								{{form.category_name}}
+							</div>
+						</div>
+
+						<div class="control-group">
+							<label class="control-label" for="created_date">{{form.created_date.label}}</label>
+							<input type="date" name="created_date" class="form-control" value="{{form.created_date.dob|date:"Y-m-d"}}" placeholder="Created Date" />
+							<div class="controls">
 							</div>
 						</div>
 
@@ -43,7 +51,7 @@
 						</div>
 					</div>
 				</form>
-				
+
 				{% if form.errors %}
                     {% for field in form %}
                         {% for error in field.errors %}

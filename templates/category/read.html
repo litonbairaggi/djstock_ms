@@ -28,6 +28,7 @@
                   <tr>
                      <th>ID</th>
                      <th>Category Name</th>
+                     <th>Created Date</th>
                      <th>Actions</th>
                   </tr>
                </thead>
@@ -37,6 +38,7 @@
                      <tr>
                            <td>{{ data.id }}</td>
                            <td>{{ data.category_name }}</td>                                      
+                           <td>{{ data.created_date }}</td>                                      
 
                         <td class="center">
                            <a class="btn btn-info" href="{% url 'category_update' data.id %}">
